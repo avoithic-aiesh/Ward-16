@@ -99,11 +99,6 @@ export default function PyathoAjimaPage() {
           heritageName={data.name.en}
         />
 
-        {/* AI Heritage Assistant: Pyatho Ajima Guide */}
-        <div className="px-4 sm:px-6 lg:px-8">
-          <HeritageGuideChat siteSlug="pyatho-ajima" siteName={data.name.en} />
-        </div>
-
         {/* 7. Religious & Cultural Significance */}
         <CulturalSignificance significanceItems={data.culturalSignificance} />
 
@@ -115,6 +110,9 @@ export default function PyathoAjimaPage() {
 
         {/* 10. Related Heritage Experiences */}
         <RelatedHeritage currentSlug="pyatho-ajima" />
+
+        {/* Floating Side Concierge AI Guide */}
+        <HeritageGuideChat siteSlug="pyatho-ajima" siteName={data.name.en} />
       </article>
     </>
   );

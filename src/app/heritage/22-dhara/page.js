@@ -96,11 +96,6 @@ export default function TwentyTwoDharaPage() {
           heritageName={data.name.en}
         />
 
-        {/* AI Heritage Assistant: 22 Dhara Guide */}
-        <div className="px-4 sm:px-6 lg:px-8">
-          <HeritageGuideChat siteSlug="22-dhara" siteName={data.name.en} />
-        </div>
-
         {/* 7. Living Cultural & Spiritual Significance */}
         <CulturalSignificance significanceItems={data.culturalSignificance} />
 
@@ -112,6 +107,9 @@ export default function TwentyTwoDharaPage() {
 
         {/* 10. Related Heritage Experiences */}
         <RelatedHeritage currentSlug="22-dhara" />
+
+        {/* Floating Side Concierge AI Guide */}
+        <HeritageGuideChat siteSlug="22-dhara" siteName={data.name.en} />
       </article>
     </>
   );
