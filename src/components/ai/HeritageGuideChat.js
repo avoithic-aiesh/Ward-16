@@ -18,7 +18,7 @@ export default function HeritageGuideChat({ siteSlug, siteName }) {
   const counterRef = useRef(1);
   const messagesEndRef = useRef(null);
 
-  const [isOpen, setIsOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(true);
 
   const suggestedQuestions =
     siteSlug === "22-dhara"
