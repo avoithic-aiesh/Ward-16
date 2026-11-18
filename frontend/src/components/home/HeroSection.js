@@ -27,16 +27,16 @@ export default function HeroSection() {
       {/* ── Background Image Layer ── */}
       <div className="absolute inset-0" aria-hidden="true">
         <Image
-          src="/images/hero/hero-vibrant.jpg"
-          alt="Ward 16 Heritage — Newari pagoda temple with prayer flags and sacred architecture"
+          src="/images/hero/hero-banner.jpg"
+          alt="Ward 16 Heritage — Newari pagoda temple with prayer flags and carved Makara water spout"
           fill
           priority
-          className="object-cover object-center"
+          className="object-cover object-right sm:object-center"
           sizes="100vw"
         />
-        {/* Deep contrast gradient overlay on left for text legibility */}
-        <div className="absolute inset-0 bg-gradient-to-r from-[#1A1816]/95 via-[#1A1816]/75 sm:via-[#1A1816]/55 to-transparent" />
-        <div className="absolute inset-0 bg-gradient-to-t from-[#1A1816]/80 via-transparent to-black/25" />
+        {/* Soft contrast gradient on left for text legibility while keeping temple & water spout vibrant */}
+        <div className="absolute inset-0 bg-gradient-to-r from-[#1A1816]/90 via-[#1A1816]/60 sm:via-[#1A1816]/30 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#1A1816]/75 via-transparent to-black/20" />
       </div>
 
       {/* ── Bottom-Left Traditional Pagoda Silhouettes Watermark ── */}
