@@ -19,34 +19,56 @@ This initiative provides:
 
 ---
 
-## 🛠️ Technology Stack
+## 🛠️ Architecture & Technology Stack
 
-- **Framework:** [Next.js 16.4.6](https://nextjs.org/) (App Router, Server Components & Route Handlers)
+The project is cleanly separated into two standalone directories:
+
+### 🎨 Frontend (`frontend/`)
+- **Framework:** [Next.js 16.4.6](https://nextjs.org/) (App Router & Server Components)
 - **UI Library:** [React 19.3.0](https://react.dev/)
-- **Styling:** [Tailwind CSS v4.3.3](https://tailwindcss.com/) with custom Modern Heritage design tokens
-- **Typography:** Google Fonts (`Cormorant Garamond` serif display, `Inter` body, Devanagari fallbacks `Mukta`, `Noto Sans Devanagari`)
-- **Mapping:** [Leaflet 1.9.4](https://leafletjs.com/) & [React-Leaflet 5.0](https://react-leaflet.js.org/) with OpenStreetMap tiles
-- **Database & Storage:** [Supabase](https://supabase.com/) PostgreSQL + Supabase Storage + Row Level Security (RLS)
-- **State & i18n:** React 19 `useSyncExternalStore` for multi-tab storage sync
-- **Tooling:** ESLint 9, Webpack production pipeline
+- **Styling:** [Tailwind CSS v4.3.3](https://tailwindcss.com/) with custom heritage design tokens
+- **Typography:**
+  - **Display (Devanagari-native):** `Yatra One`
+  - **Body Text:** `Noto Sans` & `Noto Sans Devanagari`
+- **Mapping:** [Leaflet 1.9.4](https://leafletjs.com/) & [React-Leaflet 5.0](https://react-leaflet.js.org/)
+- **API Client:** Dedicated cross-origin client configured with CORS and Next.js proxy rewrites
+
+### ⚙️ Backend (`backend/`)
+- **Server:** [Node.js](https://nodejs.org/) + [Express 4.21](https://expressjs.com/)
+- **Database:** Standard [PostgreSQL](https://www.postgresql.org/) using the traditional `pg` (`Pool`) client
+- **CORS:** Cross-Origin Resource Sharing (`cors`) middleware enabling safe communication with the Next.js frontend
+- **Chatbot Knowledge Grounding:** Strictly reads, indexes, and answers questions according to the authoritative text document at [`backend/data/knowledge_base.txt`](file:///Users/iro1tripureswor/Desktop/HOC/ward-16-heritage/backend/data/knowledge_base.txt)
 
 ---
 
-## 🚀 Installation & Local Development
+## 🚀 Running the Project
 
-### Prerequisites
-- Node.js 18.18+ or 20+
-- npm (or pnpm / yarn)
-
-### 1. Clone & Install Dependencies
+### 1. Backend Server Setup
 ```bash
-git clone https://github.com/your-username/ward-16-heritage.git
-cd ward-16-heritage
+cd backend
 npm install
+cp .env.example .env
+# Optional: Initialize PostgreSQL database tables & seed data
+npm run init-db
+# Start the Express backend (runs on port 5001)
+npm start
 ```
 
-### 2. Configure Environment Variables
-Copy the template and configure your secrets:
+### 2. Frontend Setup
+```bash
+cd frontend
+npm install
+# Start Next.js development server (runs on port 3000)
+npm run dev
+```
+
+### 3. Root Shortcuts
+From the project root:
+```bash
+npm run dev:frontend  # Starts frontend on port 3000
+npm run dev:backend   # Starts backend on port 5001
+npm run init-db       # Initializes PostgreSQL tables
+```
 ```bash
 cp .env.example .env.local
 ```

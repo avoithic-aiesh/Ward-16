@@ -1,25 +1,13 @@
 {
-  "name": "ward-16-heritage",
-  "version": "0.1.0",
+  "name": "ward-16-digital-heritage",
+  "version": "1.0.0",
   "private": true,
+  "description": "Ward 16 Digital Heritage - Separated Frontend (Next.js) and Backend (Node/Express + PostgreSQL + CORS)",
   "scripts": {
-    "dev": "next dev",
-    "build": "next build --webpack",
-    "start": "next start",
-    "lint": "eslint"
-  },
-  "dependencies": {
-    "@supabase/supabase-js": "^2.111.0",
-    "leaflet": "^1.9.4",
-    "next": "16.4.6",
-    "react": "19.3.0",
-    "react-dom": "19.3.0",
-    "react-leaflet": "^5.0.0"
-  },
-  "devDependencies": {
-    "@tailwindcss/turbopack": "4.3.3",
-    "eslint": "^9",
-    "eslint-config-next": "16.4.6",
-    "tailwindcss": "4.3.3"
+    "dev:frontend": "npm run dev --prefix frontend",
+    "dev:backend": "npm run dev --prefix backend",
+    "dev": "npm run dev:frontend",
+    "build": "npm run build --prefix frontend",
+    "init-db": "npm run init-db --prefix backend"
   }
 }
